@@ -10,10 +10,13 @@ To install git-media on a development machine, follow these steps in a terminal 
 
 ```bash
 $ sudo gem install git-media
-$ git config filter.media-clean "git-media filter-clean"
-$ git config filter.media-smudge "git-media filter.smudge"
+$ git config --global filter.media-clean "git-media filter-clean"
+$ git config --global filter.media-smudge "git-media filter.smudge"
 ```
 
+If you do not want to register the git-media filters globally, you will have to run the filter creation commands for all new repositories you create, or any repositories that you pull down. 
+
+Note: Not setting the filter for an existing repo will not prevent git-media from fetching the files from the remote location. However, once the files are fetched, they will appear as "modified", as the hash contained within the file is replaced with the actual file contents. 
 
 Configuration of git-media
 ==========================
